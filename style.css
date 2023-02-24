@@ -1,4 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope');
 
+body {
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+    main {
+        position: relative;
+        width: 80%;
+        max-width: 768px;
+        display: flex;
+        border-radius: 1rem;
+        background-color: white;
+        box-shadow: 1rem 1rem 2rem hsl(214, 17%, 51%);
+        font-family: 'Manrope', sans-serif;
+    }
+        .drawer {
+            min-width: calc(100% / 3);
+            border-radius: 1rem 0 0 1rem;
+        }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+        article {
+            padding: 2rem;
+        }
+
+            article h1 {
+                margin-block-start: 0;
+                color: hsl(217, 19%, 35%);
+                font-weight: 700;
+            }
+
+            article p {
+                color: hsl(214, 17%, 51%);
+            }
+
+            .author {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+                .authorInfo {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                    .authorInfo img {
+                        width: 3rem;
+                        border-radius: 50%;
+                        margin-right: 1rem;
+                    }
+
+                    .authorInfo .name {
+                        color: hsl(217, 19%, 35%);
+                        font-weight: 700;
+                    }
+                    .authorInfo .date {
+                        color: hsl(214, 17%, 51%);
+                    }
+                
+                .share {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    width: 2rem;
+                    aspect-ratio: 1 / 1;
+                    background-color: hsl(210, 46%, 95%);
+                }
+                    .share:hover {
+                        cursor: pointer;
+                    }
+                    
+                    .shareIcons {
+                        cursor: auto;
+                        padding: 1rem;
+                        position: absolute;
+                        display: none;
+                        background-color: hsl(214, 17%, 51%);
+                        border-radius: 1rem;
+                        transform: translate(0, -100%);
+                        
+                    }
+                        span {
+                            margin-right: 1rem;
+                            text-transform: uppercase;
+                            color: white;
+                            letter-spacing: 0.2rem;
+                        }
+
+                        .icons {
+                            display: flex;
+                        }
+                            .icons img {
+                                cursor: pointer;
+                                margin-right: 0.5rem;
+                            }
+
+                .shareMobile {
+                    width: calc(100% - 3rem);
+                    height: 3rem;
+                    z-index: -1;
+                    position: absolute;
+                    padding: 1rem 1rem 2rem 2rem;
+                    bottom: 0;
+                    display: none;
+                    background-color: hsl(214, 17%, 51%);
+                    border-radius: 0 0 1rem 1rem;
+                    align-items: center;
+                }
+                    .shareMobile img{
+                        height: 1rem;
+                    }
+
+    footer {
+        position: fixed;
+        bottom: 1vh;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-aspect-ratio: 1 / 1) and (max-width: 767px) {
+    body {
+        flex-direction: column;
+    }
+
+    main {
+        margin-block-start: 5vh;
+        flex-direction: column;
+        margin-block-end: 5vh;
+    }
+        .drawer {
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        article p {
+            margin-block-end: 2em;
+        }
+
+            .shareIcons {
+                visibility: hidden;
+            }
+
+            .shareMobile {
+                display: flex;
+            }
+
+    footer {
+        position: static;
+    }
+}
